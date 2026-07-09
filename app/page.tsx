@@ -157,10 +157,7 @@ export default function LandingPage() {
 
             <div className="hidden md:flex items-center gap-3">
               <Button variant="outline" asChild>
-                <Link href="/admin">Admin</Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href="/student">Student Portal</Link>
+                <Link href="/sign-in">Sign In</Link>
               </Button>
               <Button className="bg-primary text-primary-foreground" onClick={() => setRegisterOpen(true)}>
                 Register Now
@@ -185,7 +182,7 @@ export default function LandingPage() {
               <a href="#contact" className="block text-sm font-medium">Contact</a>
               <hr />
               <Button variant="outline" className="w-full" asChild>
-                <Link href="/admin">Admin Portal</Link>
+                <Link href="/sign-in">Sign In</Link>
               </Button>
               <Button className="w-full bg-primary text-primary-foreground" onClick={() => setRegisterOpen(true)}>
                 Register Now
@@ -445,14 +442,14 @@ export default function LandingPage() {
               © 2025 Studify. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="/admin" className="text-sm text-muted-foreground hover:text-foreground">
-                Admin
+              <Link href="/sign-in" className="text-sm text-muted-foreground hover:text-foreground">
+                Sign In
               </Link>
-              <Link href="/teacher" className="text-sm text-muted-foreground hover:text-foreground">
-                Teacher
+              <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
+                Privacy Policy
               </Link>
-              <Link href="/student" className="text-sm text-muted-foreground hover:text-foreground">
-                Student
+              <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
+                Terms
               </Link>
             </div>
           </div>

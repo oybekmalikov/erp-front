@@ -23,9 +23,9 @@ import { Button } from '@/components/ui/button';
 
 const adminNavigation = [
   {
-    name: 'Dashboard',
-    href: '/admin',
-    icon: LayoutDashboard,
+    name: 'Users',
+    href: '/admin/users',
+    icon: Users,
   },
   {
     name: 'Students',
@@ -34,8 +34,18 @@ const adminNavigation = [
   },
   {
     name: 'Staff',
-    href: '/admin/staff',
-    icon: Users,
+    href: '/admin/staff-members',
+    icon: Shield,
+  },
+  {
+    name: 'Branches',
+    href: '/admin/branches-mgmt',
+    icon: Building2,
+  },
+  {
+    name: 'Finance',
+    href: '/admin/payments-mgmt',
+    icon: DollarSign,
   },
   {
     name: 'Groups',
@@ -51,16 +61,6 @@ const adminNavigation = [
     name: 'Leads',
     href: '/admin/leads',
     icon: TrendingUp,
-  },
-  {
-    name: 'Finance',
-    href: '/admin/finance',
-    icon: DollarSign,
-  },
-  {
-    name: 'Branches',
-    href: '/admin/branches',
-    icon: Building2,
   },
   {
     name: 'Marketing',

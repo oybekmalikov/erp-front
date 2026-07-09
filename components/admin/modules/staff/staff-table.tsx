@@ -19,7 +19,6 @@ import { DeleteStaffDialog } from './delete-staff-dialog';
 
 interface StaffTableProps {
   data: Staff[];
-  isLoading: boolean;
   pagination: {
     page: number;
     limit: number;
@@ -39,17 +38,7 @@ export function StaffTable({
 
   if (data.length === 0) {
     return (
-      <div className="space-y-3 p-6">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Skeleton key={i} className="h-12" />
-        ))}
-      </div>
-    );
-  }
-
-  if (data.length === 0) {
-    return (
-      <div className="p-6 text-center text-gray-500">
+      <div className="p-6 text-center text-muted-foreground">
         No staff found. Create one to get started.
       </div>
     );

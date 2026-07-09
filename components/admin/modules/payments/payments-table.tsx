@@ -19,7 +19,6 @@ import { DeletePaymentDialog } from './delete-payment-dialog';
 
 interface PaymentsTableProps {
   data: StudentPayment[];
-  isLoading: boolean;
   pagination: {
     page: number;
     limit: number;
@@ -46,10 +45,8 @@ export function PaymentsTable({
 
   if (data.length === 0) {
     return (
-      <div className="space-y-3 p-6">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Skeleton key={i} className="h-12" />
-        ))}
+      <div className="p-6 text-center text-muted-foreground">
+        No payments found. Create one to get started.
       </div>
     );
   }

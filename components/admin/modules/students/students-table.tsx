@@ -19,7 +19,6 @@ import { DeleteStudentDialog } from './delete-student-dialog';
 
 interface StudentsTableProps {
   data: Student[];
-  isLoading: boolean;
   pagination: {
     page: number;
     limit: number;
@@ -39,17 +38,7 @@ export function StudentsTable({
 
   if (data.length === 0) {
     return (
-      <div className="space-y-3 p-6">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Skeleton key={i} className="h-12" />
-        ))}
-      </div>
-    );
-  }
-
-  if (data.length === 0) {
-    return (
-      <div className="p-6 text-center text-gray-500">
+      <div className="p-6 text-center text-muted-foreground">
         No students found. Create one to get started.
       </div>
     );

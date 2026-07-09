@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Primary - Teal */
+    --brand-primary: 160 52% 28%;
+    --brand-primary-dark: 160 50% 19%;
+    --brand-primary-light: 152 85% 94%;
+
+    /* CTA Accent - Orange */
+    --cta-accent: 37 89% 55%;
+    --cta-accent-text: 28 92% 11%;
+
+    /* ERP Surface */
+    --erp-surface: 40 14% 94%;
+    --erp-surface-dark: 30 8% 12%;
+    --erp-neutral-text: 45 2% 27%;
+
+    /* Status Colors */
+    --success: 160 84% 39%;
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
+    --info: 217 91% 60%;
+
+    /* Light Mode Base */
+    --background: 40 14% 97%;
+    --foreground: 45 2% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 45 2% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 45 2% 20%;
+    --primary: 160 52% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 14% 94%;
+    --secondary-foreground: 45 2% 27%;
+    --muted: 40 14% 94%;
+    --muted-foreground: 45 2% 45%;
+    --accent: 37 89% 55%;
+    --accent-foreground: 28 92% 11%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
+    --ring: 160 52% 28%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode - Deep teal-tinted dark theme */
+    --background: 200 15% 8%;
+    --foreground: 200 10% 92%;
+    --card: 200 15% 11%;
+    --card-foreground: 200 10% 92%;
+    --popover: 200 15% 11%;
+    --popover-foreground: 200 10% 92%;
+    --primary: 160 52% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 12% 18%;
+    --secondary-foreground: 200 10% 88%;
+    --muted: 200 12% 18%;
+    --muted-foreground: 200 10% 65%;
+    --accent: 37 89% 50%;
+    --accent-foreground: 28 92% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 200 12% 22%;
+    --input: 200 12% 22%;
+    --ring: 160 52% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+}

@@ -43,6 +43,7 @@ import {
   TrendingUp,
   Menu,
   X,
+  BookOpen,
 } from 'lucide-react';
 
 const stats = [
@@ -430,27 +431,130 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t">
+      {/* Portal Access Section */}
+      <section id="portals" className="py-16 bg-background border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <GraduationCap className="h-6 w-6 text-primary" />
-              <span className="font-bold">Studify</span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              © 2025 Studify. All rights reserved.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Access Your Portal</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Sign in to your dedicated portal to manage courses, track progress, or administer the system.
             </p>
-            <div className="flex items-center gap-4">
-              <Link href="/sign-in" className="text-sm text-muted-foreground hover:text-foreground">
-                Sign In
-              </Link>
-              <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
-                Privacy Policy
-              </Link>
-              <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
-                Terms
-              </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Student Portal */}
+            <Card className="hover:shadow-lg transition-shadow hover:border-primary cursor-pointer">
+              <CardContent className="pt-6">
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-blue-100 dark:bg-blue-950 rounded-lg flex items-center justify-center">
+                    <Users className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Student</h3>
+                    <p className="text-sm text-muted-foreground">Track your progress & courses</p>
+                  </div>
+                  <Button asChild className="w-full">
+                    <Link href="/sign-in">Access Portal</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Teacher Portal */}
+            <Card className="hover:shadow-lg transition-shadow hover:border-primary cursor-pointer">
+              <CardContent className="pt-6">
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-green-100 dark:bg-green-950 rounded-lg flex items-center justify-center">
+                    <BookOpen className="h-8 w-8 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Teacher</h3>
+                    <p className="text-sm text-muted-foreground">Manage classes & assignments</p>
+                  </div>
+                  <Button asChild className="w-full">
+                    <Link href="/sign-in">Access Portal</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Parent Portal */}
+            <Card className="hover:shadow-lg transition-shadow hover:border-primary cursor-pointer">
+              <CardContent className="pt-6">
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-purple-100 dark:bg-purple-950 rounded-lg flex items-center justify-center">
+                    <Users className="h-8 w-8 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Parent</h3>
+                    <p className="text-sm text-muted-foreground">Monitor your children&apos;s progress</p>
+                  </div>
+                  <Button asChild className="w-full">
+                    <Link href="/sign-in">Access Portal</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Admin Portal */}
+            <Card className="hover:shadow-lg transition-shadow hover:border-primary cursor-pointer">
+              <CardContent className="pt-6">
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-red-100 dark:bg-red-950 rounded-lg flex items-center justify-center">
+                    <Target className="h-8 w-8 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Admin</h3>
+                    <p className="text-sm text-muted-foreground">System administration</p>
+                  </div>
+                  <Button asChild className="w-full">
+                    <Link href="/sign-in">Access Portal</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4">Studify</h3>
+              <p className="text-sm text-muted-foreground">Your gateway to tech excellence</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li><Link href="/" className="text-sm text-muted-foreground hover:text-foreground">Home</Link></li>
+                <li><Link href="#courses" className="text-sm text-muted-foreground hover:text-foreground">Courses</Link></li>
+                <li><Link href="#portals" className="text-sm text-muted-foreground hover:text-foreground">Portals</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Support</h4>
+              <ul className="space-y-2">
+                <li><Link href="/" className="text-sm text-muted-foreground hover:text-foreground">FAQ</Link></li>
+                <li><a onClick={() => setContactOpen(true)} className="text-sm text-muted-foreground hover:text-foreground cursor-pointer">Contact</a></li>
+                <li><Link href="/" className="text-sm text-muted-foreground hover:text-foreground">Help</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
+                    Terms
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

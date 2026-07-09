@@ -25,7 +25,7 @@ export default function SignInPage() {
       } else if (email.includes('teacher')) {
         window.location.href = '/teacher/dashboard';
       } else {
-        window.location.href = '/student/dashboard';
+        window.location.href = '/student';
       }
       setIsLoading(false);
     }, 1000);
